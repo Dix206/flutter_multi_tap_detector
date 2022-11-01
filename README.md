@@ -1,39 +1,46 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# multi_tap_detector
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A widget to handle multiple taps on its child.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+* Define a callback after a certain number of taps.
+* Define the maximum duration which can be passed between two taps.
+* Define callback on each tap to detect the progress.
+* Define callback on taps counter reset.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+In the `pubspec.yaml` of your flutter project, add the following dependency:
+
+```yaml
+dependencies:
+  multi_tap_detector: ^1.0.0
+```
+
+To use the `MultiTapDetector` widget add the following import:
+
+```dart
+import 'package:multi_tap_detector/multi_tap_detector.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```dart
-const like = 'sample';
+return MultiTapDetector(
+      taps: 5,
+      onMultiTap: () {
+        print('The widget was tapped 5 times!');
+      },
+      onTap: (tapCount) {
+        print('You have tapped the widget $tapCount times!');
+      },
+      onTapsReset: () {
+        print('The taps have been reset!');
+      },
+      maxDurationBetweenTaps: const Duration(milliseconds: 1379),
+      child: YourWidget(),
+    );
 ```
 
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Checkout a full example at https://github.com/Dix206/flutter_multi_tap_detector/blob/master/example/lib/main.dart
