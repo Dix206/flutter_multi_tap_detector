@@ -1,0 +1,19 @@
+name: multi_tap_detector
+description: A package to handle multiple taps on a widget.
+version: 1.0.0
+homepage: https://github.com/Dix206/flutter_multi_tap_detector
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
