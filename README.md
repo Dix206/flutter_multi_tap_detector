@@ -4,7 +4,7 @@ A widget to handle multiple taps on its child.
 
 ## Features
 
-* Define a callback after a certain number of taps.
+* Define callback after a certain number of taps.
 * Define the maximum duration which can be passed between two taps.
 * Define callback on each tap to detect the progress.
 * Define callback on taps counter reset.
@@ -28,19 +28,19 @@ import 'package:multi_tap_detector/multi_tap_detector.dart';
 
 ```dart
 return MultiTapDetector(
-      taps: 5,
-      onMultiTap: () {
-        print('The widget was tapped 5 times!');
-      },
-      onTap: (tapCount) {
-        print('You have tapped the widget $tapCount times!');
-      },
-      onTapsReset: () {
-        print('The taps have been reset!');
-      },
-      maxDurationBetweenTaps: const Duration(milliseconds: 1379),
-      child: YourWidget(),
-    );
+    taps: 5,
+    onMultiTap: () {
+      print('The widget was tapped 5 times!');
+    },
+    onTap: (tapCount) {
+      print('You have tapped the widget $tapCount times!');
+    },
+    onTapsReset: () {
+      print('The taps have been reset!');
+    },
+    maxDurationBetweenTaps: const Duration(milliseconds: 1379),
+    child: YourWidget(),
+);
 ```
 
 Checkout a full example at https://github.com/Dix206/flutter_multi_tap_detector/blob/master/example/lib/main.dart
